@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["f"].value;
+  if (x == "") {
+    alert("Remplisssez tous les champs svp");
+    return false;
+  }
+  else if (document.getElementById('prenom') .value== ""){
+alert ("Veuillez entrer votre prénom svp!");
+return false;
+}
+else if(document.getElementById('nom') .value== ""||document.getElementById('mail') .value== ""||document.getElementById('text') .value== ""||document.getElementById('genre') .value== ""){
+alert ("Veuillez entrer votre nom, email, message et genre svp!");
+return false;
+}
+}
+
+</script>
+</head>
+<body>
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <fieldset>
+            <legend>  <h1>Formulaire de contact</h1></legend>
+                        <label>Prénom:</label><br>
+                        <input type="text" name="f" value="" size="40" id="prenom"><br><br>
+                        <label>Nom:</label><br>
+                        <input type="text" name="f" value=""  size="40" id="nom"><br><br>
+                        <label for="mail">Email:</label>
+                        <br><input type="email" id="mail" name="f" value=""  size="40"><br><br>
+                        <label>Message:</label><br>
+                        <textarea name="f" rows="10" cols="30"  size="40" id="text">
+                                </textarea><br><br><br>
+                        <input type="radio" name="f" value="Feminin" id="genre"> Féminin<br>
+                        <input type="radio" name="f" value="Masculin" id="genre"> Masculin<br><br><br>
+                        
+                        <input type="submit" name="envoyer" value="Envoyer" onclick="return validateForm()" >
+                        <input type="reset" value="Annuler" name="envoyer">
+        </fieldset>
+</form>
+
+</body>
+</html>
